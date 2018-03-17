@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - About</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/list.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <a href="/"><img src="/Images/logo.png" width="230" height="82"/></a>
+      </div>
+      <ul class="list-unstyled components">
+        <li><a href="/">Portfolio</a></li>
+        <li class="active"><a href="#">About</a></li>
+        <li><a href="guestbook">Guestbook</a></li>
+        <li><a href="search">Search</a></li>
+        {% if uid == 0 %}
+        <li><a href="/login">Login/Register</a></li>
+        {% else %}
+        <li><a href="/logout">{{username}}</a></li>
+        {% endif %}
+      </ul>
+      <div style="font-size:x-large">
+        <a href="https://twitter.com/TheVadster7" class="fa fa-twitter" target="_blank"></a>
+        <a href="https://www.instagram.com/thevadster7/" class="fa fa-instagram" target="_blank"></a>
+        <a href="https://500px.com/rohitvaddi" class="fa fa-500px" target="_blank"></a>
+        <a href="https://github.com/thatVaddiguy" class="fa fa-github" target="_blank"></a>
+        <a href="https://www.linkedin.com/in/rohit-vaddi-141096/" class="fa fa-linkedin" target="_blank"></a>
+      </div>
+    </nav>
+    <div class="content">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+          </div>
+          <h1 style="text-align:center">About</h1>
+        </div>
+      </nav>
+      <div class="container" style="padding-left:100px;text-align:center;">
+        <img class="img-circle" src="/Images/me.jpg">
+        <h3>Who Am i ?</h3>
+        <p>A very curious photographer , trying to figure out why the world looks better with eyes compared to my camera lens :/</p>
+        <h3>How do i talk to you ?</h3>
+        <p>Well you can find my social media links on the side and leave a comment on the pictures :)</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

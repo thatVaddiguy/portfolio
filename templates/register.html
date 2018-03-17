@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/list.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <a href="/"><img src="/Images/logo.png" width="230" height="82"/></a>
+        </div>
+        <ul class="list-unstyled components">
+          <li><a href="/">Portfolio</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="guestbook">Guestbook</a></li>
+          <li><a href="search">Search</a></li>
+          <li class="active"><a href="#">Login/Register</a></li>
+        </ul>
+        <div style="font-size:x-large">
+          <a href="https://twitter.com/TheVadster7" class="fa fa-twitter" target="_blank"></a>
+          <a href="https://www.instagram.com/thevadster7/" class="fa fa-instagram" target="_blank"></a>
+          <a href="https://500px.com/rohitvaddi" class="fa fa-500px" target="_blank"></a>
+          <a href="https://github.com/thatVaddiguy" class="fa fa-github" target="_blank"></a>
+          <a href="https://www.linkedin.com/in/rohit-vaddi-141096/" class="fa fa-linkedin" target="_blank"></a>
+        </div>
+      </nav>
+      <div class="content">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+            </div>
+            <h1 style="text-align:center">Register</h1>
+          </div>
+        </nav>
+        <div id="container">
+          <div class="wrapper">
+            <form action="/addUser" method="post" name="Login_Form" class="form-signin">
+              <h3 class="form-signin-heading">Join Us!</h3>
+              Username:
+              <input type="text" class="form-control" name="Username" placeholder="Dart44" required autofocus>
+              Email:
+              <input type="email" class="form-control" name="Email" placeholder="example@example.com" required>
+              Password:
+              <input type="password" class="form-control" name="Password" placeholder="*******" required>
+              <br>
+              <button style="background-color:black;" class="btn btn-lg btn-primary btn-block" type="Submit">Register</button>
+              <a class="Links" href="/login">Login ?</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

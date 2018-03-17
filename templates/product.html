@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Image</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/list.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <a href="/"><img src="/Images/logo.png" width="230" height="82"/></a>
+      </div>
+      <ul class="list-unstyled components">
+        <li class="active"><a href="/">Portfolio</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="guestbook">Guestbook</a></li>
+        <li><a href="search">Search</a></li>
+        {% if uid == 0 %}
+        <li><a href="/login">Login/Register</a></li>
+        {% else %}
+        <li><a href="/logout">{{username}}</a></li>
+        {% endif %}
+      </ul>
+      <div style="font-size:x-large">
+        <a href="https://twitter.com/TheVadster7" class="fa fa-twitter" target="_blank"></a>
+        <a href="https://www.instagram.com/thevadster7/" class="fa fa-instagram" target="_blank"></a>
+        <a href="https://500px.com/rohitvaddi" class="fa fa-500px" target="_blank"></a>
+        <a href="https://github.com/thatVaddiguy" class="fa fa-github" target="_blank"></a>
+        <a href="https://www.linkedin.com/in/rohit-vaddi-141096/" class="fa fa-linkedin" target="_blank"></a>
+      </div>
+    </nav>
+    <div class="content">
+      {% if photos %}
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+          </div>
+          <h1 style="text-align:center">{{photos[1]}}</h1>
+        </div>
+      </nav>
+      <div class="container" style="margin-left:360px;">
+        <div class="image row">
+          <img src="/Images/{{name[1]}}/{{photos[0]}}.jpg" style="width:90%;">
+        </div>
+        <div class="description">
+          <h4>Description:</h4>
+          <p>{{photos[2]}}</p>
+        </div>
+        <div class="comments">
+
+        </div>
+      </div>
+
+    </div>
+    <div class="container" style="padding-left: 100px;">
+      {% if uid==0 %}
+      <h3>Please login to leave a comment !</h3>
+      {% else %}
+      <h3>Please Leave a comment !</h3>
+      <form action="" method="post">
+        <dl>
+          <dt>Comment:</dt>
+          <dd><input type="text" name="comment" style="width:350px; height:90px;"></dd>
+          <dd><input type="submit" value="Add Comment"></dd>
+        </dl>
+      </form>
+      {% endif %}
+    </div>
+    <div class="container" style="padding-left: 100px;">
+      <h3>Comments</h3>
+      {% for entry in comments %}
+      <div id="comment">
+        <h4>{{entry[0]}}</h4>
+        <p>{{ entry[1] }}</p>
+      </div>
+      <hr style="border-top: black 1px solid;">
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+  <script>
+  baguetteBox.run('.tz-gallery');
+</script>
+</body>
+</html>

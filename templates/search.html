@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Search</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/list.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <a href="/"><img src="/Images/logo.png" width="230" height="82"/></a>
+      </div>
+      <ul class="list-unstyled components">
+        <li><a href="/">Portfolio</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="guestbook">Guestbook</a></li>
+        <li class="active"><a href="#">Search</a></li>
+        {% if uid == 0 %}
+        <li><a href="/login">Login/Register</a></li>
+        {% else %}
+        <li><a href="/logout">{{username}}</a></li>
+        {% endif %}
+      </ul>
+      <div style="font-size:x-large">
+        <a href="https://twitter.com/TheVadster7" class="fa fa-twitter" target="_blank"></a>
+        <a href="https://www.instagram.com/thevadster7/" class="fa fa-instagram" target="_blank"></a>
+        <a href="https://500px.com/rohitvaddi" class="fa fa-500px" target="_blank"></a>
+        <a href="https://github.com/thatVaddiguy" class="fa fa-github" target="_blank"></a>
+        <a href="https://www.linkedin.com/in/rohit-vaddi-141096/" class="fa fa-linkedin" target="_blank"></a>
+      </div>
+    </nav>
+    <div class="content">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+          </div>
+          <h1 style="text-align:center">Search</h1>
+        </div>
+      </nav>
+      <div class="container">
+        <form method="post" action="" style="padding-left:200px; padding-right:200px;">
+          <div class="row">
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" type="text" name="search" placeholder="Search" required/>
+                <span class="input-group-btn">
+                  <button class="btn btn-success" type="submit">Search</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="container" style="padding-left:100px;">
+      {% for entry in rv %}
+      <h4><a href="/product?id={{entry[3]}}&pid={{entry[0]}}">{{entry[1]}}</a></h4>
+      <p>{{entry[2]}}</p>
+      <hr>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</body>
+</html>

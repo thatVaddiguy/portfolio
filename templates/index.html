@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Home</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="wrapper">
+    <!--Sidebar-->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <a href="#"><img src="/Images/logo.png" width="230" height="82"/></a>
+      </div>
+      <ul class="list-unstyled components">
+        <li class="active"><a href="/">Portfolio</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="guestbook">Guestbook</a></li>
+        <li><a href="search">Search</a></li>
+        {% if uid == 0 %}
+        <li><a href="/login">Login/Register</a></li>
+        {% else %}
+        <li><a href="/logout">{{username}}</a></li>
+        {% endif %}
+      </ul>
+      <div style="font-size:x-large">
+        <a href="https://twitter.com/TheVadster7" class="fa fa-twitter" target="_blank"></a>
+        <a href="https://www.instagram.com/thevadster7/" class="fa fa-instagram" target="_blank"></a>
+        <a href="https://500px.com/rohitvaddi" class="fa fa-500px" target="_blank"></a>
+        <a href="https://github.com/thatVaddiguy" class="fa fa-github" target="_blank"></a>
+        <a href="https://www.linkedin.com/in/rohit-vaddi-141096/" class="fa fa-linkedin" target="_blank"></a>
+      </div>
+    </nav>
+    <!-- Main page -->
+    <!--Top head -->
+    <div id="content">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <h1 style="text-align:center">Portfolio</h1>
+        </div>
+      </nav>
+      <!-- Category of pictures-->
+      <div class="container">
+        <div class="row">
+          <div class="col md-4 col-xs-4 category-pic category-one">
+            <a href="list?id=1">
+              <img src="/Images/nature/1.jpg" width="400px" height="400px">
+              <div class="overlay">
+                <div class="text">Nature</div>
+              </div>
+            </a>
+          </div>
+          <div class="col md-4 col-xs-4 category-pic col-centered">
+            <a href="list?id=2">
+              <img src="/Images/people/9.jpg" width="400px" height="400px">
+              <div class="overlay">
+                <div class="text">People</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col md-4 col-xs-4 category-pic category-one">
+            <a href="list?id=3">
+              <img src="/Images/beach/11.jpg" width="400px" height="400px">
+              <div class="overlay">
+                <div class="text">Beach</div>
+              </div>
+            </a>
+          </div>
+          <div class="col md-4 col-xs-4 category-pic col-centered">
+            <a href="list?id=4">
+              <img src="/Images/cities/19.jpg" width="400px" height="400px">
+              <div class="overlay">
+                <div class="text">Cities</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js"></script>
+
+</body>
+</html>
